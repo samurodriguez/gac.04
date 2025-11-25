@@ -1,0 +1,17 @@
+name: learning artifacts
+on: push
+jobs:
+  generate-random-num:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: node generateRandomNum.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: random-num
+          path: random.txt
+          if-no-files-found: error
+          retention-days: 1
