@@ -16,6 +16,7 @@ jobs:
           if-no-files-found: error
           retention-days: 1
   get-random-num:
+    needs: generate-random-num
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v5
