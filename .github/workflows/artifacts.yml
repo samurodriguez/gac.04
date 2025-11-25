@@ -15,3 +15,10 @@ jobs:
           path: random.txt
           if-no-files-found: error
           retention-days: 1
+  get-random-num:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: random-num
+      - run: cat random.txt
