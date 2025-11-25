@@ -1,5 +1,5 @@
 name: learning artifacts
-on: push
+on: workflow_dispatch
 jobs:
   generate-random-num:
     runs-on: ubuntu-latest
